@@ -14,6 +14,8 @@ internal abstract class Enemy {
 
     internal void Fight(Player player) {
         while (true) {
+            Task.Delay(1000).Wait();
+
             this.InflictDamage(player.Strength);
             player.TakeDamage(this.Strength);
 

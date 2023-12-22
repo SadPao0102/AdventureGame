@@ -18,7 +18,24 @@ internal sealed class Dungeon(Player player) {
     }
 
     internal void Play() {
+        this.Advance();
+
         while (true) {
+            Console.WriteLine("Do you want to continue? (y/n)");
+
+            userInput:
+            var input = Console.ReadLine();
+
+            if (input == "y") {
+                // continue
+            } else if (input == "n") {
+                Console.WriteLine("You ran away from the dungeon!");
+                Environment.Exit(0);
+            } else {
+                Console.WriteLine("Invalid input!");
+                goto userInput;
+            }
+
             this.Advance();
         }
     }
