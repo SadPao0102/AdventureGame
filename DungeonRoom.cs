@@ -18,8 +18,8 @@ internal static class DungeonRoomExtension {
         var random = new Random();
 
         for (var i = 0; i < count; i++) {
-            var size = random.Next(0, 3);
-            rooms[i] = (DungeonRoom)size;
+            var room = random.Next(0, 3);
+            rooms[i] = (DungeonRoom)room;
         }
 
         return rooms;
