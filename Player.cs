@@ -5,29 +5,43 @@
 //
 
 internal sealed class Player(string name, PlayerTrait trait) {
-    public string Name { get; } = name;
-    public PlayerTrait Trait { get; } = trait;
-    public uint Strength => this.Trait switch {
+    internal string Name { get; } = name;
+    internal PlayerTrait Trait { get; } = trait;
+    internal int Strength => this.Trait switch {
         PlayerTrait.Strong => 2,
         PlayerTrait.Tough => 1,
         PlayerTrait.Agile => 1,
         _ => throw new InvalidOperationException("Invalid player class!"),
     };
 
-    public uint Toughness => this.Trait switch {
+    internal int Toughness => this.Trait switch {
         PlayerTrait.Strong => 1,
         PlayerTrait.Tough => 2,
         PlayerTrait.Agile => 1,
         _ => throw new InvalidOperationException("Invalid player class!"),
     };
 
-    public uint Agility => this.Trait switch {
+    internal int Agility => this.Trait switch {
         PlayerTrait.Strong => 1,
         PlayerTrait.Tough => 1,
         PlayerTrait.Agile => 2,
         _ => throw new InvalidOperationException("Invalid player class!"),
     };
 
-    public uint Health { get; private set; } = MaxHealth;
-    public static uint MaxHealth { get; } = 100;
+    internal int Health { get; private set; } = MaxHealth;
+    private static int MaxHealth { get; } = 100;
+
+    internal void TakeDamage(int damage) {
+        var roll = new Random().Next(this.Agility, 3);
+
+        if (roll == 3) {
+            Console.WriteLine("You dodged!");
+            return;
+        }
+
+        var hpLost = damage / this.Toughness;
+        this.Health -= hpLost;
+
+        Console.WriteLine($"You took {hpLost} damage and you have {this.Health} health left!");
+    }
 }

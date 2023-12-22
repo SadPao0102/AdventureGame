@@ -43,3 +43,6 @@ var playerTrait = traitChoice switch {
 var player = new Player(name, playerTrait);
 
 Console.WriteLine($"Welcome, {player.Name}, the {player.Trait}!");
+
+var dungeon = new Dungeon(player);
+dungeon.Play();
