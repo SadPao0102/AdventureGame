@@ -8,9 +8,9 @@ internal abstract class Enemy {
     private protected string Name { get; init; } = "";
     private protected int Health { get; set; }
 
-    private protected int Strength { get; set; }
-    private protected int Toughness { get; set; }
-    private protected int Agility { get; set; }
+    private protected int Strength { get; init; }
+    private protected int Toughness { get; init; }
+    private protected int Agility { get; init; }
 
     internal void Fight(Player player) {
         while (true) {
