@@ -8,9 +8,9 @@ internal sealed class Player(string name, PlayerTrait trait) {
     internal string Name { get; } = name;
     internal PlayerTrait Trait { get; } = trait;
     internal int Strength => this.Trait switch {
-        PlayerTrait.Strong => 2,
-        PlayerTrait.Tough => 1,
-        PlayerTrait.Agile => 1,
+        PlayerTrait.Strong => 4,
+        PlayerTrait.Tough => 2,
+        PlayerTrait.Agile => 2,
         _ => throw new InvalidOperationException("Invalid player class!"),
     };
 
