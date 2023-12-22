@@ -32,7 +32,7 @@ internal abstract class Enemy {
     }
 
     private void InflictDamage(int damage) {
-        var roll = new Random().Next(this.Agility, 3);
+        var roll = new Random().Next(this.Agility, 4);
 
         if (roll == 3) {
             Console.WriteLine("Enemy dodged!");

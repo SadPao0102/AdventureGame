@@ -32,7 +32,7 @@ internal sealed class Player(string name, PlayerTrait trait) {
     private static int MaxHealth { get; } = 100;
 
     internal void TakeDamage(int damage) {
-        var roll = new Random().Next(this.Agility, 3);
+        var roll = new Random().Next(this.Agility, 4);
 
         if (roll == 3) {
             Console.WriteLine("You dodged!");
