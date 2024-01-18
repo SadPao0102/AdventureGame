@@ -4,7 +4,7 @@
 // Copyright © 2024 Adam Cvikl
 //
 
-internal abstract class Enemy {
+internal abstract class Enemy : IFightable {
     private protected string Name { get; init; } = "";
     private protected int Health { get; set; }
 
@@ -16,7 +16,7 @@ internal abstract class Enemy {
         while (true) {
             Task.Delay(1000).Wait();
 
-            this.InflictDamage(player.Strength);
+            this.TakeDamage(player.Strength);
             player.TakeDamage(this.Strength);
 
             if (player.Health <= 0) {
@@ -31,7 +31,7 @@ internal abstract class Enemy {
         }
     }
 
-    private void InflictDamage(int damage) {
+    internal void TakeDamage(int damage) {
         var roll = new Random().Next(this.Agility, 4);
 
         if (roll == 3) {

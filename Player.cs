@@ -4,8 +4,8 @@
 // Copyright © 2024 Adam Cvikl
 //
 
-internal sealed class Player(string name, PlayerTrait trait) {
-    internal string Name { get; } = name;
+internal sealed class Player(string name, PlayerTrait trait) : IFightable {
+    internal string Name { get; init; } = name;
     internal PlayerTrait Trait { get; } = trait;
     internal int Strength => this.Trait switch {
         PlayerTrait.Strong => 4,
