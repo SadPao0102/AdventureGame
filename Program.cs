@@ -42,7 +42,9 @@ var playerTrait = traitChoice switch {
 
 var player = new Player(name, playerTrait);
 
-Console.WriteLine($"Welcome, {player.Name}, the {player.Trait}!");
+Console.WriteLine($"\nWELCOME, {player.Name}, the {player.Trait}!");
+Console.WriteLine("Kill the Golden Spider or clear the whole dungeon to WIN!\n");
+Task.Delay(2000).Wait();
 
 var dungeon = new Dungeon(player);
 dungeon.Play();

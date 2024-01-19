@@ -49,23 +49,32 @@ internal sealed class Dungeon(Player player) {
                 break;
 
             case DungeonRoom.Spider:
-                Console.WriteLine("You have encountered a spider!");
+                Console.WriteLine("You have encountered a Spider!");
                 var spider = new Spider();
                 spider.Fight(player);
                 break;
 
             case DungeonRoom.Skeleton:
-                Console.WriteLine("You have encountered a skeleton!");
+                Console.WriteLine("You have encountered a Skeleton!");
                 var skeleton = new Skeleton();
                 skeleton.Fight(player);
                 break;
+            case DungeonRoom.GoldenSpider:
+                Console.WriteLine("You have encountered a Golden Spider!");
+                var goldenSpider = new GoldenSpider();
+                goldenSpider.Fight(player);
 
+                Console.WriteLine("The Golden Spider has been slain!");
+                Console.WriteLine("You win!");
+                Environment.Exit(0);
+                break;
             default:
                 throw new InvalidOperationException("Invalid dungeon room!");
         }
     }
 
     private static void Win() {
+        Console.WriteLine("You cleared the whole dungeon");
         Console.WriteLine("You won!");
         Environment.Exit(0);
     }

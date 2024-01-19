@@ -4,7 +4,7 @@
 // Copyright © 2024 Adam Cvikl
 //
 
-internal sealed class Spider : Enemy {
+internal class Spider : Enemy {
     internal Spider() {
         this.Name = "Spider";
         this.Health = 6;
