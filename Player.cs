@@ -11,21 +11,21 @@ internal sealed class Player(string name, PlayerTrait trait) : IFightable {
         PlayerTrait.Strong => 4,
         PlayerTrait.Tough => 2,
         PlayerTrait.Agile => 2,
-        _ => throw new InvalidOperationException("Invalid player class!"),
+        _ => throw new InvalidOperationException("Invalid player trait!"),
     };
 
     internal int Toughness => this.Trait switch {
         PlayerTrait.Strong => 1,
         PlayerTrait.Tough => 2,
         PlayerTrait.Agile => 1,
-        _ => throw new InvalidOperationException("Invalid player class!"),
+        _ => throw new InvalidOperationException("Invalid player trait!"),
     };
 
     internal int Agility => this.Trait switch {
         PlayerTrait.Strong => 1,
         PlayerTrait.Tough => 1,
         PlayerTrait.Agile => 2,
-        _ => throw new InvalidOperationException("Invalid player class!"),
+        _ => throw new InvalidOperationException("Invalid player trait!"),
     };
 
     internal int Health { get; private set; } = MaxHealth;

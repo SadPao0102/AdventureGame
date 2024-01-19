@@ -37,7 +37,7 @@ var playerTrait = traitChoice switch {
     1 => PlayerTrait.Strong,
     2 => PlayerTrait.Tough,
     3 => PlayerTrait.Agile,
-    _ => throw new InvalidOperationException("Invalid player trait!"),
+    _ => throw new InvalidOperationException("Invalid player trait choice!"),
 };
 
 var player = new Player(name, playerTrait);
