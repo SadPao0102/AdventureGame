@@ -59,6 +59,11 @@ internal sealed class Dungeon(Player player) {
                 var skeleton = new Skeleton();
                 skeleton.Fight(player);
                 break;
+            case DungeonRoom.Dragon:
+                Console.WriteLine("You have encountered a Dragon!");
+                var dragon = new Dragon();
+                dragon.Fight(player);
+                break;
             case DungeonRoom.GoldenSpider:
                 Console.WriteLine("You have encountered a Golden Spider!");
                 var goldenSpider = new GoldenSpider();

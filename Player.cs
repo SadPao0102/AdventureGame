@@ -8,23 +8,23 @@ internal sealed class Player(string name, PlayerTrait trait) : IFightable {
     internal string Name { get; init; } = name;
     internal PlayerTrait Trait { get; } = trait;
     internal int Strength => this.Trait switch {
-        PlayerTrait.Strong => 4,
-        PlayerTrait.Tough => 2,
-        PlayerTrait.Agile => 2,
+        PlayerTrait.Strong => 5,
+        PlayerTrait.Tough => 3,
+        PlayerTrait.Agile => 3,
         _ => throw new InvalidOperationException("Invalid player trait!"),
     };
 
     internal int Toughness => this.Trait switch {
-        PlayerTrait.Strong => 1,
-        PlayerTrait.Tough => 2,
-        PlayerTrait.Agile => 1,
+        PlayerTrait.Strong => 3,
+        PlayerTrait.Tough => 5,
+        PlayerTrait.Agile => 3,
         _ => throw new InvalidOperationException("Invalid player trait!"),
     };
 
     internal int Agility => this.Trait switch {
-        PlayerTrait.Strong => 1,
-        PlayerTrait.Tough => 1,
-        PlayerTrait.Agile => 2,
+        PlayerTrait.Strong => 2,
+        PlayerTrait.Tough => 2,
+        PlayerTrait.Agile => 4,
         _ => throw new InvalidOperationException("Invalid player trait!"),
     };
 

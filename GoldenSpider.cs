@@ -7,6 +7,6 @@
 internal sealed class GoldenSpider : Spider {
     internal GoldenSpider() : base() {
         this.Name = "Golden Spider";
-        this.Health = 20;
+        this.Health = 50;
     }
 }

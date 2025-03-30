@@ -8,8 +8,12 @@ internal enum DungeonRoom {
     Empty,
     Spider,
     Skeleton,
+    Dragon,
     GoldenSpider,
 }
+
+
+
 
 internal static class DungeonRoomExtension {
     internal static DungeonRoom[] GenerateRooms() {
@@ -26,13 +30,14 @@ internal static class DungeonRoomExtension {
         return rooms;
     }
 
-    private static DungeonRoom GenerateDungeonRoom(int seed) => seed switch {
+  private static DungeonRoom GenerateDungeonRoom(int seed) => seed switch {
         // 0..3
-        >= 0 and <= 3 => DungeonRoom.Empty,
+        >= 0 and <= 1 => DungeonRoom.Empty,
         // 4..6
-        >= 4 and <= 6 => DungeonRoom.Spider,
+        >= 2 and <= 4 => DungeonRoom.Spider,
         // 7..9
-        >= 7 and <= 9 => DungeonRoom.Skeleton,
+        >= 5 and <= 7 => DungeonRoom.Skeleton,
+        >= 8 and <= 9 => DungeonRoom.Dragon,
         10 => DungeonRoom.GoldenSpider,
 
         _ => throw new InvalidOperationException("Bad dungeon generation probability int"),

@@ -45,3 +45,4 @@ internal abstract class Enemy : IFightable {
         Console.WriteLine($"{this.Name} took {hpLost} damage and has {this.Health} health left!");
     }
 }
+
